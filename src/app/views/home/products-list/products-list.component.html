@@ -1,11 +1,24 @@
-<div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
-  <div>
-    <mat-card style="text-align: center;">
-      <h1>Lista de produtos</h1>
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+  <ng-container *ngFor="let product of list" style="padding: 2%;">
+
+    <mat-card class="mat-card-product" fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)" fxFlex.lt-sm="100%">
+
+      <mat-card-title class="card-title-product">
+        <div class="row">
+          <p>{{product.nome}}</p>
+        </div>
+      </mat-card-title>
+
       <hr>
-      <h3>Titulo</h3>
-      <span>Quantidade: 50</span>
-      <p>Valor: R$100,00</p>
+
+      <mat-card-content>
+          <p><span>Quantidade: </span>{{product.quantidade}}</p>
+          <p><span>Preço: </span>{{product.valor | currency:'BRL':true}}</p>
+      </mat-card-content>
+
     </mat-card>
-  </div>
+
+  </ng-container>
+
 </div>

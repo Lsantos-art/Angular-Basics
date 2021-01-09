@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Products } from '../model/products.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class ProductService {
     private httpClient: HttpClient
   ) { }
 
-  public getProductsWithFlag(flag: string): Observable<ProductService> {
-    return this.httpClient.get<ProductService>(this.apiUrl + '?flag=' + flag)
+  public getProductsWithFlag(flag: string): Observable<Products> {
+    return this.httpClient.get<Products>(this.apiUrl + flag)
   }
 
 }
