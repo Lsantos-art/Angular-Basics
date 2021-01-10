@@ -18,6 +18,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ProductsFormDialogComponent } from './views/home/products-form-dialog/products-form-dialog.component';
+import {MatInputModule} from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 registerLocaleData(localePt, 'pt');
 
@@ -25,7 +31,8 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductsFormDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,12 @@ registerLocaleData(localePt, 'pt');
     MatGridListModule,
     MatListModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    MatInputModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

@@ -1,0 +1,21 @@
+.btn {
+    margin-top: 10px;
+    background-color: rgb(10, 34, 34);
+    margin-right: 2px;
+}
+
+.btn-btn-danger {
+    background-color: rgb(138, 11, 11);
+    margin-top: 10px;
+    margin-right: 2px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

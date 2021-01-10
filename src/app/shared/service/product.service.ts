@@ -1,14 +1,15 @@
+import { Products } from 'src/app/shared/model/products.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Products } from '../model/products.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  apiUrl = 'https://produtos-api-lsantos.herokuapp.com/api/';
+  getUrl = 'https://produtos-api-lsantos.herokuapp.com/api/';
+  postUrl = 'https://produtos-api-lsantos.herokuapp.com/api/produto';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +22,11 @@ export class ProductService {
   ) { }
 
   public getProductsWithFlag(flag: string): Observable<Products> {
-    return this.httpClient.get<Products>(this.apiUrl + flag)
+    return this.httpClient.get<Products>(this.getUrl + flag)
+  }
+
+  public postProducts(product: any): Observable<Products> {
+    return this.httpClient.post<any>(this.postUrl, product, this.httpOptions)
   }
 
 }

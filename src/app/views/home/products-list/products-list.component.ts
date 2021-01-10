@@ -12,7 +12,7 @@ import { LOCALE_ID } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  list!: Products;
+  list: Products[] = [];
 
   constructor(
     public productService: ProductService
